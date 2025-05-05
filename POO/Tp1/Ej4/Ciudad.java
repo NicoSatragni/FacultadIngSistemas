@@ -10,12 +10,14 @@ solución. Implementar en java
  */
 
 public class Ciudad {
+    private String nombre;
     private int habitantes, maxImp;
     private float  gastos;
     private float[]  recaudado;
     private boolean enDeficit;
 
-    public Ciudad(int habitantes, float[] recaudado, float gastos){
+    public Ciudad(String nombre, int habitantes, float[] recaudado, float gastos){
+        this.nombre = nombre;
         this.habitantes = habitantes;
         this.recaudado = recaudado;
         this.gastos = gastos;
