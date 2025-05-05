@@ -12,11 +12,11 @@ solución. Implementar en java
 public class Ciudad {
     private String nombre;
     private int habitantes, maxImp;
-    private float  gastos;
-    private float[]  recaudado;
+    private double  gastos;
+    private double[]  recaudado;
     private boolean enDeficit;
 
-    public Ciudad(String nombre, int habitantes, float[] recaudado, float gastos){
+    public Ciudad(String nombre, int habitantes, double[] recaudado, double gastos){
         this.nombre = nombre;
         this.habitantes = habitantes;
         this.recaudado = recaudado;
@@ -26,7 +26,7 @@ public class Ciudad {
 
     private float sumaRecaudados(){
         float suma = 0;
-        for (float f : recaudado) {
+        for (double f : recaudado) {
             suma += f;
         }
         return suma;
@@ -40,7 +40,7 @@ public class Ciudad {
         this.habitantes = habitantes;
     }
 
-    public float getGastos() {
+    public double  getGastos() {
         return gastos;
     }
 
@@ -48,11 +48,11 @@ public class Ciudad {
         this.gastos = gastos;
     }
 
-    public float getRecaudado() {
+    public double getRecaudado() {
         return recaudado(this.recaudado);
     }
 
-    public void setRecaudado(float[] recaudado) {
+    public void setRecaudado(double[] recaudado) {
         this.recaudado = recaudado;
     }
 
@@ -64,9 +64,9 @@ public class Ciudad {
         this.enDeficit = enDeficit;
     }
     
-    private float recaudado(float[] impuestos){
-        float cont = 0;
-        for (float f : impuestos) {
+    private double recaudado(double[] impuestos){
+        double cont = 0;
+        for (double f : impuestos) {
             cont += f;
         }
         return cont;
