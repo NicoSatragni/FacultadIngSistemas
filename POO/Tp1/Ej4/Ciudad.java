@@ -21,10 +21,10 @@ public class Ciudad {
         this.habitantes = habitantes;
         this.recaudado = recaudado;
         this.gastos = gastos;
-        this.enDeficit = ((sumaRecaudados() - gastos) < 0) ? true : false;
+        this.enDeficit = ((sumaRecaudados(recaudado) - gastos) < 0) ? true : false;
     }
 
-    private float sumaRecaudados(){
+    private float sumaRecaudados(double[] recaudado){
         float suma = 0;
         for (double f : recaudado) {
             suma += f;
@@ -70,6 +70,10 @@ public class Ciudad {
             cont += f;
         }
         return cont;
+    }
+
+    public String getNombre(){
+        return this.nombre;
     }
     
 

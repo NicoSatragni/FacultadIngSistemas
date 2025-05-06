@@ -9,7 +9,8 @@ public class Pais{
             new Provincia("Buenos Aires", new Ciudad[]{
                 new Ciudad("Necochea", 100000, new double[]{120.34, 103.52, 53.40}, 500.41),
                 new Ciudad("Mar del Plata", 1000000, new double[]{1003.42, 1200.03, 1345.18, 5678.00}, 3800.23),
-                new Ciudad("Quequen", 15000, new double[]{23.76, 34.10, 123.78}, 3800.71)
+                new Ciudad("Quequen", 15000, new double[]{23.76, 34.10, 123.78}, 38000.71),
+                new Ciudad("Balneario LA", 90000, new double[]{23.76, 34.10}, 3800.71)
                 }
             ),
             new Provincia("Cordoba", new Ciudad[]{
@@ -42,7 +43,7 @@ public class Pais{
         ArrayList<Provincia> ProvsDeficit = new ArrayList<Provincia>();
         int actualProv = 0;
         for(Provincia prov : this.provincias){
-            if(prov.enDeficit()){
+            if(prov.isEnDeficit()){
                 ProvsDeficit.add(prov);
             }
         }
@@ -53,10 +54,18 @@ public class Pais{
         ArrayList<Provincia> ProvsNoDeficit = new ArrayList<Provincia>();
         int actualProv = 0;
         for(Provincia prov : this.provincias){
-            if (!prov.enDeficit()){
+            if (!prov.isEnDeficit()){
                 ProvsNoDeficit.add(prov);
             }   
         }
         return ProvsNoDeficit;
+    }
+
+    public boolean enDeficit(){
+        if(getProvinciasDeficit().size() > getProvinciasNoDeficit().size()){
+            return true;
+        } else{
+            return false;
+        }
     }
 }

@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 public class Provincia{
     private Ciudad[] ciudades;
     private boolean enDeficit;
@@ -6,26 +9,24 @@ public class Provincia{
     public Provincia (String nombre,  Ciudad[] ciudades){
         this.ciudades = ciudades;
         this.nombre = nombre;
-        this.enDeficit = enDeficit(); 
+        this.enDeficit = isEnDeficit(); 
     }
 
 
 
 
-    public boolean enDeficit(){
-        float nDeficit = 0;
-        int deficit = 0;
-        for (Ciudad ciudad : ciudades) {
+    public ArrayList<Ciudad> enDeficit(){
+        //float noDeficit = 0;
+        ArrayList<Ciudad> ciuadesDeficit = new ArrayList<Ciudad>();
+        for (Ciudad ciudad : this.ciudades) {
             if (ciudad.getHabitantes() > 99999){
-                if ((ciudad.getGastos() - ciudad.getRecaudado()) < 0){
-                    deficit ++;
-                } else{
-                    nDeficit ++;
+                if ((ciudad.getRecaudado() - ciudad.getGastos()) < 0){
+                    ciuadesDeficit.add(ciudad);
                 }
             }
         }
 
-        return nDeficit < deficit ? true : false;
+        return ciuadesDeficit;
     }
 
     public Ciudad[] getCiudades() {
@@ -37,7 +38,7 @@ public class Provincia{
     }
 
     public boolean isEnDeficit() {
-        return enDeficit;
+        return enDeficit().size() > this.ciudades.length;
     }
 
     public void setEnDeficit(boolean enDeficit) {
