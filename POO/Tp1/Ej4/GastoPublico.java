@@ -26,7 +26,6 @@ public class GastoPublico{
         }
 
         System.out.println(Argentina.imprimirDeficit());
-        //hola puto
         
         System.exit(0);
     }
