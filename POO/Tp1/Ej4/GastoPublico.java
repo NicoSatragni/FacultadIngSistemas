@@ -25,16 +25,11 @@ public class GastoPublico{
             }
         }
 
-        System.out.println(Deficit(Argentina));
+        System.out.println(Argentina.imprimirDeficit());
+
+        System.exit(0);
     }
 
-    public static String Deficit(Pais pais){
-        if(pais.enDeficit()){
-            return ( "\nEl pais esta en deficit, la mayoria de sus provincias gastan mas de lo que recaudan" );
-        } else{
-            return( "\nEl pais NO esta en deficit, la mayoria de sus provincias recaudan mas de lo que gastan" );
 
-        }
-    }
 
 }
