@@ -4,7 +4,7 @@ programa que verifique si cada uno de los números almacenados en un arreglo son
 #include <iostream>
 using namespace std;
 
-bool esPrimo(int num){
+bool esPrimo(const int num){
     if(num != 2 && num % 2 == 0){
         return false;
     }else if (num != 3 && num % 3 == 0){
@@ -19,20 +19,23 @@ bool esPrimo(int num){
 
 int main(){
     
-    int maxArray; 
-    cout << "Ingrese la cantidad de elementos del arreglo: ";
-    cin >> maxArray;
+    int maxArray = 12; 
+    // cout << "Ingrese la cantidad de elementos del arreglo: ";
+    // cin >> maxArray;
 
     
-    int arr[maxArray] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 13};
-
+    int * ptr_arr = new int[maxArray];
+    // Initialize the array with some values to test
+    for (int i = 0; i < maxArray; i++) {
+        ptr_arr[i] = i + 1; // Fill with numbers 1 to 12
+    }
     for (int i = 0; i < maxArray; i ++){
-        if (esPrimo(arr[i]) == false){
-            cout << "El numero " << arr[i] << " NO es primo." << endl;
+        if (esPrimo(ptr_arr[i]) == false){
+            cout << "El numero " << ptr_arr[i] << " NO es primo." << endl;
         }
         else{
             
-            cout << "El numero " << arr[i] << " SI es primo." << endl;
+            cout << "El numero " << ptr_arr[i] << " SI es primo." << endl;
 
         }
     }

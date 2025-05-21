@@ -15,15 +15,15 @@ int main() {
     int cant;
     cout << " Ingrese la cant de numeros: ";
     cin >> cant;
-    int ar[cant];
+    int *ptr_arr = new int[cant];
     cout << " ingrese los numeros separados de un esapcio. ";
 
     for (int i = 0; i <= cant; i++){
-        cin >> ar[i];
+        cin >> ptr_arr[i];
     }
 
     for (int i = cant; i >= 0; i--){
-        cout << ar[i] << ' ';
+        cout << ptr_arr[i] << ' ';
     }
     return 0;
 }
