@@ -1,0 +1,35 @@
+# Ignorar PDFs, videos y archivos grandes que no son código
+*.pdf
+*.mp4
+*.mkv
+*.avi
+*.zip
+*.rar
+*.7z
+
+# Ignorar archivos temporales de editores
+*.log
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# Ignorar archivos de VSCode (opcional, si no querés compartir tu configuración)
+.vscode/
+
+# Ignorar archivos compilados (si programás en C/C++ por ejemplo)
+*.exe
+*.out
+*.o
+*.class
+
+# Archivos de Python cache
+__pycache__/
+*.pyc
+
+# Archivos de notebooks con salida pesada (opcional)
+.ipynb_checkpoints/
+
+# Carpetas de sistema
+.DS_Store
+Thumbs.db
