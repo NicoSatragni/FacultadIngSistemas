@@ -1,30 +1,32 @@
-
-
 public class Producto {
 
-    static private int codProducto;
 
-    public static int getCodProducto() {
-        return codProducto;
-    }
-
-    public static void setCodProducto(int codProducto) {
-        Producto.codProducto = codProducto;
-    }
+    private int codProducto;
     private int cant;
     private double precio;
     private String nombre;
     private String categoria;
-    private int gravamen;
+    private String gravamen;
+    private int minimoPermitido;
 
-    public Producto(int cant,double precio,String nombre, String categroria, int gravamen){
-        this.codProducto = ++codProducto;
+    public Producto(int cant,double precio,String nombre, String categroria, String gravamen, int codProducto, int minimoPermitido){
+        this.codProducto = codProducto;
+        this.nombre = nombre;
         this.cant = cant;
         this.precio = precio;
-        this.nombre = nombre;
         this.categoria = categoria;
         this.gravamen = gravamen;
+        this.minimoPermitido = minimoPermitido; 
     }
+
+    public boolean enMinimo() {
+        return enMinimoPrc(1);
+    }
+
+    public boolean enMinimoPrc(double prc) {
+        return this.cant <= this.minimoPermitido*prc;
+    }
+
 
     public int getStock() {
         return cant;
@@ -48,6 +50,46 @@ public class Producto {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public String getGravamen() {
+        return gravamen;
+    }
+
+    public void setGravamen(String gravamen) {
+        this.gravamen = gravamen;
+    }
+
+
+
+    public int getCodProducto() {
+        return codProducto;
+    }
+
+
+
+    public void setCodProducto(int codProducto) {
+        this.codProducto = codProducto;
+    }
+
+
+
+    public int getCant() {
+        return cant;
+    }
+
+
+
+    public void setCant(int cant) {
+        this.cant = cant;
     }
 
     
