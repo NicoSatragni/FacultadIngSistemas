@@ -1,5 +1,8 @@
-package tp4.ej4;
+package tp4.ej4.Elementos;
 import java.util.ArrayList;
+
+import Elementos.Enfermedad;
+import Elementos.ProductoQuimico;
 
 public class SistemaAgro{
     private ArrayList<ProductoQuimico> productos;
