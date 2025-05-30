@@ -1,4 +1,5 @@
-package tp4.ej4;
+package Elementos;
+
 
 
 /*
@@ -25,6 +26,8 @@ tratar. Tener en cuenta que ciertos agroquímicos no pueden aplicarse sobre dete
 cultivos.
 
  */
+
+import Cultivo;
 
 public class ProductoQuimico extends AgroElemento{
     private Cultivo[] cultivosDesaconsejados;

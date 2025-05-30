@@ -102,7 +102,7 @@ public class Facturador {
                         impNacional += this.gravamenes.get(producto.getGravamen())[1].aplicarImpuesto(producto.getPrecio());
                     }
 
-                    ticket.agregarRenglon(new Renglon(producto.getNombre(), prodComp.getValue(), producto.getPrecio(), impNacional, impProvincial, getDescuento(dcto)));
+                    ticket.agregarRenglon(new Renglon(producto, impNacional, impProvincial, getDescuento(dcto)));
                     
                     producto.ActualizarStock(-prodComp.getValue());
                 }

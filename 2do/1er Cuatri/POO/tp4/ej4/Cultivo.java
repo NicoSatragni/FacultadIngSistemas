@@ -1,6 +1,9 @@
-package tp4.ej4;
+
 
 import java.util.ArrayList;
+
+import Elementos.Enfermedad;
+import Elementos.ProductoQuimico;
 
 public class Cultivo{
     private String nombre;
