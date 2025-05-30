@@ -1,8 +1,11 @@
 #include <iostream>
-
 using namespace std;
 
+int * numAleatorios(){
+    
+}
+
 int main() {
-    cout << "Hola" << endl;
+
     return 0;
 }

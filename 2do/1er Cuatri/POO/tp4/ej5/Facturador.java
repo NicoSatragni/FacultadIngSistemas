@@ -1,3 +1,5 @@
 public class Facturador {
-    public Facturador 
+    public Facturador()
 }
+
+

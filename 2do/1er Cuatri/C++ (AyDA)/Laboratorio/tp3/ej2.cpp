@@ -43,7 +43,7 @@ int main() {
         ptr_block[i] = valores[i];
     }
 
-    Prueba de impresión
+    //Prueba de impresión
     for (int i = 0; i < n; ++i) {
         std::cout << ptr_block[i] << " ";
     }
@@ -58,7 +58,7 @@ int main() {
         std::cout << "No se encontro la posicion" << endl;
     }
     
-    delete[] ptr_block; // ✅ Liberar memoria dinámica
+    delete[] ptr_block; // Liberar memoria dinámica
     return 0;
 }
 

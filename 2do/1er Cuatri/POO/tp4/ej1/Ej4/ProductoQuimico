@@ -1,0 +1,4 @@
+public class ProductoQuimico {
+    private String nombre;
+    private ArrayList<
+}
