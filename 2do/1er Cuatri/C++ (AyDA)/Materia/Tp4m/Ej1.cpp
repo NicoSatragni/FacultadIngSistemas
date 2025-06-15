@@ -29,7 +29,7 @@ int particion(int arr[], int inicio, int fin){
     intercambio(arr[inicio], arr[j]);
     return j;    
 }
-
+            
 void quickSort(int arr[], int i, int j){
     
     if (i < j){
