@@ -15,13 +15,9 @@ double medianaParcial(int arr[], int inicio, int fin)
     int n = fin - inicio + 1;
 
     if (n % 2 == 0)
-    {
         return (arr[(inicio + (n /2))] + arr[(inicio + (n /2) - 1)]) / 2;
-    }
     else
-    {
         return arr[inicio + (n/2)];
-    }
 }
 
 double mediana(int x[], int y[], int inicioX, int finX, int inicioY, int finY)
@@ -32,8 +28,7 @@ double mediana(int x[], int y[], int inicioX, int finX, int inicioY, int finY)
         return (x[inicioX] + y[inicioY] / 2.0);
     }
 
-    if (n == 2)
-    {
+    if (n == 2) {
         int maxInicio = max(x[inicioX], y[inicioY]);
         int minFin = min(x[finX], y[finY]);
         return (maxInicio + minFin) / 2.0;

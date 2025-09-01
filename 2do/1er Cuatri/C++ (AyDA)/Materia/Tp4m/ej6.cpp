@@ -27,7 +27,8 @@ int* detectarPuntosIter(int a[], int n) {
     return ptr_block;
 }
 
-int* detectarPuntosRec(int a[], int n) {
+int* detectarPuntosDyC(int a[], int n) {
+    
     
 }
 
