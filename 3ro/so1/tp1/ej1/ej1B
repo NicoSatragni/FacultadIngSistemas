@@ -1,0 +1,10 @@
+#!/bin/bash
+file=$1
+c=$2
+if [ -f $file ]; then
+	tr '[:digit:]' "$c" < "$file" > "$file.tmp"
+	mv "$file.tmp" "$file"
+	echo "Se modifico $file"
+else
+	echo "No se modifico $file"
+fi

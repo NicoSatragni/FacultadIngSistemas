@@ -1,0 +1,4 @@
+#!/bin/bash
+archivo=$1
+if![ -f "$archivo" ]; then
+	echo archivo | tr 

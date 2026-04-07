@@ -1,0 +1,10 @@
+#!/bin/bash
+archivo=$1 
+if [ -f "$archivo" ]; then
+	tr '[:lower:]' '[:upper:]' < "$archivo" > "$archivo.tmp"
+	mv "$archivo.tmp" "$archivo"
+	echo "Se modifico $archivo"
+else
+	echo "No existe el archivo"
+fi
+

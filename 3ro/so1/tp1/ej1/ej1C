@@ -1,0 +1,13 @@
+#!/bin/bash
+file=$1
+
+if [[ ! -f "$file" ]]; then
+	echo "No existe el archivo"
+else
+	
+i=$(wc -l < $file)
+while [ $i -gt 0 ]; do
+		sed -n "${i}p" "$file"
+		i=$((i-1))
+	done
+fi
