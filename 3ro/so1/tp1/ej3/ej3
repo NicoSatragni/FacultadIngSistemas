@@ -1,4 +1,22 @@
 #!/bin/bash
 Path=~/Documents/FacultadIngSistemas/3ro/so1/tp1/ej3/
 LOG_FILE="logElim.log"
-find "$Path" -type f -size -1k 
+
+find "$Path" -type f -size -1k | while read -r archivo; do
+  read -p "para "$archivo" elija: [d] para borrar, [c] para comprimir, [enter] para saltar: " accion </dev/tty
+
+  case $accion in
+    d|D)
+      rm "$archivo"
+      echo "$(date '+%Y-%m-%d %H:%M:%S') - Eliminado: $archivo" >> "$LOG_FILE"
+      echo "Archivo eliminado"
+      ;;
+    c|C)
+      gzip "$archivo"
+      echo "Archivo cmprimido"
+      ;;
+    *)
+      echo "Saltando "$archivo""
+      ;;
+  esac
+done

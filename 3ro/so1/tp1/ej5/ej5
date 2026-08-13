@@ -1,0 +1,14 @@
+#!/bin/bash
+cnt=0
+for file in *; do
+	if [ ! -f "$file" ]; then
+		echo ""$file" no es un archivo..."
+		continue
+	fi
+	tn=$(echo "$file" | tr '[:upper:]' '[:lower:]' | tr ' ' '_')
+	mv -i "$file" "$tn"
+	cnt+=1
+	
+done
+
+echo "Cantidad de archivos modificados: "$cnt""

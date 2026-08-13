@@ -1,0 +1,25 @@
+#!/bin/bash
+
+for file in "$@"; do
+	if [ -f "$file" ]; then
+		extension=${file##*.}
+		case "$extension" in
+			gz)
+				gunzip -k "$file"
+				;;
+			bz2)
+				bunzip2 -k "$file"
+				;;
+			zip)
+				unzip "$file"
+				;;
+			tar) tar -xvf "$file"
+				;;
+			*)
+				echo "'$file' no es un archivo comprimido conocido"
+				continue
+				;;
+		esac				
+		echo "archivo .$extension, "$file" descomprimido."
+	fi
+done
